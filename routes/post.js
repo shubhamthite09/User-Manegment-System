@@ -53,7 +53,7 @@ postRouter.get("/top",async(req,res)=>{
 
 postRouter.patch("/update/:id",async(req,res)=>{
     try{
-        await postModle.findByIdAndUpdate({_id:req.params.id})
+        await postModle.findByIdAndUpdate({_id:req.params.id},req.body)
         res.send({msg:`updated`})
     }catch(err){
         res.json({err:err.messege})
